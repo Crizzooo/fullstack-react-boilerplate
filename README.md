@@ -3,11 +3,13 @@ Starting point for Full Stack React-based Javascript Applications!
 
 ### Features:
 * React
-* React-Redux stores already connected
+* React-Redux
 * React-Router v4
-* Webpack Bundling && SCSS Compiling
 * Express Server
 * Redux Dev Tools Extension
+* Webpack Bundling & SCSS Compiling Config
+* Babel ES6
+* Live Reloading & Building
 
 
 # Instructions
