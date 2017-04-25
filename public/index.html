@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <!-- Defines the character set -->
+    <meta charset="UTF-8">
+    <!-- MDN recommends placing this right after your <head> tag -->
+    <!-- "as some browsers restart the parsing of an HTML document if the declared charset is different from what they had anticipated" -->
+    <!-- https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Introduction_to_HTML5 -->
+
+    <!-- Responsive design? Check. This tag will make mobile browsers scale to device width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>React Starting Point!</title>
+
+    <!-- Our js bundle will be in 'bundle.js' -->
+    <!-- The 'defer' attribute will ensure that it is run only after the DOM finishes loading -->
+    <script src="./dist/bundle.js" defer></script>
+  </head>
+  <body>
+    <!-- We will render our React app into a div with an id of 'app' -->
+    <!-- We can grab it off the DOM by saing `document.getElementById('app');` -->
+    <div id="app">
+      <h3>You'll probably want to put some stuff here ;)</h3>
+      <h4>Hi</h4>
+    </div>
+  </body>
+</html>
