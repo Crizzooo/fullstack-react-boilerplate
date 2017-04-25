@@ -1,4 +1,4 @@
-# react-redux-express-boilerplate
+# fullstack-react-boilerplate (tiny bones)
 Starting point for Full Stack React-based Javascript Applications!
 
 ### Features:
