@@ -20,12 +20,12 @@ app.listen(PORT, () => {
 })
 
 //redirect api routes
-app.use('/api', require('./apiRoutes'));
+app.use('/api', require('./api'));
 
-app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use(express.static(path.join(__dirname, '..', 'client/src/public')));
 
 app.get('*', (req, res, next) => {
-  res.sendFile(path.join(__dirname, '..', 'public/index.html'));
+  res.sendFile(path.join(__dirname, '..', 'client/src/public/index.html'));
 });
 
 //Error Handler
