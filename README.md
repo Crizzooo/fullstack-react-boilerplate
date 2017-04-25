@@ -1,6 +1,7 @@
 # react-redux-express-boilerplate
 Starting point for Full Stack React-based Javascript Applications!
-Features:
+
+### Features:
 * React
 * React-Redux stores already connected
 * React-Router v4
@@ -13,7 +14,7 @@ Features:
 1. Clone this repo to your local machine `https://github.com/Crizzooo/react-redux-express-boilerplate.git`
 2. `npm install --save`
 3. `npm start`
-4. Visit //localhost:3000 to verify everything works!
+4. Visit `localhost:3000` to verify everything works!
 5. Get to building the meat of your project without worrying about the boring stuff!
 
 # File Structure
