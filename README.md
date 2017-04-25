@@ -10,7 +10,7 @@ Features:
 
 
 # Instructions
-1. Clone this repo to your local machine
+1. Clone this repo to your local machine `https://github.com/Crizzooo/react-redux-express-boilerplate.git`
 2. `npm install --save`
 3. `npm start`
 4. Visit //localhost:3000 to verify everything works!
