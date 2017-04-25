@@ -19,12 +19,22 @@ Features:
 # File Structure
 ```
 .
-+-- _client
-|   +-- _src
-|   +-- _public
-+-- _server
-|   +-- _api
-|   +-- index.js
++-- client
+|   +-- src
+|       +-- components      
+|           +-- sampleComponent.js         <-- React Component JS
+|           +-- sampleComponentStyle.scss  <-- Modular SCSS Styles for components
+|       +-- public
+|           +-- dist          <-- Webpack output of bundle.js
+|           +-- stylesheets   <-- holds our main scss file, others can be imported to components
+|           +-- index.html   
+|       +-- reducers
+|       +-- app.js            <-- Holds Routes for React Router v4
+|       +-- index.js          <-- Initates React Rout and React-Router v4
+|       +-- store.js          <-- React Redux Store
++-- server
+|   +-- api                 <-- Folder for API Routes
+|   +-- index.js            <-- Initates Express Server which serves index.html and static files
 ```
 
 
