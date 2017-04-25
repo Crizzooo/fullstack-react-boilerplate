@@ -5,7 +5,7 @@ module.exports = {
   entry: './client/src/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'client/dist')
+    path: path.resolve(__dirname, 'public/dist')
   },
   context: __dirname,
   devtool: 'source-map',
@@ -20,7 +20,16 @@ module.exports = {
       options: {
         presets: ['react', 'es2015']
       }
-    }]
+    },
+    {
+      test: /\.scss$/,
+      use: [
+        'style-loader',
+        'css-loader',
+        'sass-loader'
+      ]
+    }
+  ]
   },
   plugins: [
     new LiveReloadPlugin({appendScriptTag: true})
