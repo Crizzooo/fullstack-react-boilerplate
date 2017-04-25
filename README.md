@@ -17,6 +17,7 @@ Features:
 5. Get to building the meat of your project without worrying about the boring stuff!
 
 # File Structure
+```
 .
 +-- _client
 |   +-- _src
@@ -24,6 +25,7 @@ Features:
 +-- _server
 |   +-- _api
 |   +-- index.js
+```
 
 
 # Future Updates Pipeline
