@@ -1,20 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
 import store from './store.js';
+import App from './app.js';
 
 //load main css
 import './public/stylesheets/index.scss';
 
-//load components
-import SampleComponent from './components/sampleComponent';
-
 ReactDOM.render(
-  <Provider store={store} >
-    <SampleComponent />
-  </Provider>,
-  document.getElementById('app')
-);
-
-    // <h3>You'll probably put some stuff here ;)</h3>
+  (<Provider store={store} >
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>),
+  document.getElementById('app'));

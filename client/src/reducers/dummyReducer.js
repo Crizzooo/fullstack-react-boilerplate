@@ -13,7 +13,7 @@ export const updateMessage = (messageNumber) => ({
 
 
 // Data used for Dummy Reducer
-const messages = ['React', 'Express Servers', 'Live Reloading', 'Webpack Bundling', 'Modular SCSS Compiling / Importing', 'Redux Dev Tools', 'Babel React/ES6 Syntax'];
+const messages = ['React', 'Express Servers', 'Live Reloading', 'Webpack Bundling', 'Modular SCSS Compiling / Importing', 'Redux Dev Tools Extension', 'Babel React/ES6 Syntax'];
 export const amountOfMessages = messages.length - 1;
 
 
