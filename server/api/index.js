@@ -1,7 +1,8 @@
 const router = require('express').Router();
 
 
-//delegate to further api routes
+//delegate to further api routes]
+// '/api/sample'
 router.use('/sample', require('./sampleAPIBranch/'));
 
 
