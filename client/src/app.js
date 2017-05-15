@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 //load components
-import SampleComponent from './components/sampleComponent';
+import EmailSplash from './components/EmailSplash';
 
 
 const App = () => (
   <div>
-    <SampleComponent />
+    <EmailSplash />
   </div>
 );
 
