@@ -9,12 +9,18 @@ $emailSignUp-height: 60vh;
   background-color: #001f3f;
   padding-left: calc( (100vw - #{$emailSignUp-width}) / 2);
   padding-top: calc( (100vh - #{$emailSignUp-height}) / 2);
+  color: white;
 }
 
 .emailSignUp {
   width: $emailSignUp-width;
   height: $emailSignUp-height;
   border: 1px solid white;
+  text-align: center;
+}
+
+.emailFormInput {
+  display: inline-block;
 }
 
 /* Mail Chimp Stuff */

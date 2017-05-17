@@ -11,28 +11,52 @@ class EmailSplash extends Component {
 
     //attach bound functions here
     //this.func = this.func.bind(this)
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(evt) {
+    console.log('changiing..');
+    console.log(evt.target.value);
   }
 
   render() {
     return (
       <div className="splashBackground">
         <div className="emailSignUp">
-          <div id="mc_embed_signup">
-            <form action="//play.us15.list-manage.com/subscribe/post?u=d806631c2c2b68285d31de691&amp;id=c29285afce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
-              <div id="mc_embed_signup_scroll">
-              	<label htmlFor="mce-EMAIL">Subscribe to our mailing list</label>
-              	<input type="email" value="" name="EMAIL" className="email" id="mce-EMAIL" placeholder="email address" required></input>
-                  <div style={{position: "absolute", left: "-5000px"}} aria-hidden="true">
-                    <input type="text" name="b_d806631c2c2b68285d31de691_c29285afce" tabindex="-1" value=""></input>
-                  </div>
-                  <div className="clear">
-                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="button"></input>
-                  </div>
-              </div>
-            </form>
+          <div className="signupHeader">
+            <h1>cashgrounds</h1>
+            <h6>compete. survive. win cash!</h6>
           </div>
-        </div>
+          <form action="//play.us15.list-manage.com/subscribe/post?u=d806631c2c2b68285d31de691&amp;id=c29285afce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
+            <div id="mergeTable" className="mergeTable row">
+
+              <div className="mergeRow dojoDndItem mergeRow-email emailFormInputperformance col-sm-6" id="mergeRow-0">
+                <label htmlFor="MERGE0">Email Address <span className="req asterisk">*</span></label>
+                <div className="field-group input-field">
+                  <input type="email" autoCapitalize="off" autoCorrect="off" name="MERGE0" id="MERGE0" size="25"></input>
+                </div>
+              </div>
+
+              <div className="mergeRow dojoDndItem mergeRow-text emailFormInputperformance col-sm-6" id="mergeRow-1">
+                <label htmlFor="MERGE1">Gamer Name</label>
+                <div className="field-group">
+                  <input type="text" name="MERGE1" id="MERGE1" size="25"></input>
+                </div>
+              </div>
+            </div>
+
+            <input type="hidden" name="u" value="d806631c2c2b68285d31de691"></input>
+            <input type="hidden" name="id" value="c29285afce"></input>
+
+
+            <div className="submit_container clear">
+              <input type="submit" className="button" name="submit" value="Subscribe to list"></input>
+            </div>
+            <input type="hidden" name="ht" value="b22f7a9abaa70e0da9ad920a44daea817c852b2f:MTQ5NTA0MDUzMC4yNTM3"></input>
+            <input type="hidden" name="mc_signupsource" value="hosted"></input>
+        </form>
       </div>
+    </div>
     );
   }
 }
@@ -57,18 +81,42 @@ export default connect(mapState, null)(EmailSplash);
 
 //COMPONENT CODE
 // <div id="mc_embed_signup">
-//   <form action="//play.us15.list-manage.com/subscribe/post?u=d806631c2c2b68285d31de691&amp;id=c29285afce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+//   <form action="//play.us15.list-manage.com/subscribe/post?u=d806631c2c2b68285d31de691&amp;id=c29285afce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
 //     <div id="mc_embed_signup_scroll">
 //     	<label for="mce-EMAIL">Subscribe to our mailing list</label>
-//     	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+//     	<input type="email" value="" name="EMAIL" className="email" id="mce-EMAIL" placeholder="email address" required>
 //         <div style="position: absolute; left: -5000px;" aria-hidden="true">
 //           <input type="text" name="b_d806631c2c2b68285d31de691_c29285afce" tabindex="-1" value="">
 //         </div>
-//         <div class="clear">
-//           <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+//         <div className="clear">
+//           <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="button">
 //         </div>
 //     </div>
 //   </form>
 // </div>
 //
 // <!--End mc_embed_signup-->
+
+
+
+// <form action="//play.us15.list-manage.com/subscribe/post?u=d806631c2c2b68285d31de691&amp;id=c29285afce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
+//     <div id="mc_embed_signup_scroll">
+// 	<h2>Subscribe to our mailing list</h2>
+// <div className="indicates-required"><span className="asterisk">*</span> indicates required</div>
+// <div className="mc-field-group">
+// 	<label for="mce-EMAIL">Email Address  <span className="asterisk">*</span>
+// </label>
+// 	<input type="email" value="" name="EMAIL" className="required email" id="mce-EMAIL"></input>
+// </div>
+// <div className="mc-field-group">
+// 	<label htmlForm="mce-GNAME">Gamer Name </label>
+// 	<input type="text" value="" name="GNAME" className="" id="mce-GNAME"></input>
+// </div>
+// 	<div id="mce-responses" className="clear">
+// 		<div className="response" id="mce-error-response" ></div>
+// 		<div className="response" id="mce-success-response" ></div>
+// 	</div>
+//     <div aria-hidden="true"><input type="text" name="b_d806631c2c2b68285d31de691_c29285afce" tabindex="-1" value=""></input></div>
+//     <div className="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="button"></input></div>
+//     </div>
+// </form>
