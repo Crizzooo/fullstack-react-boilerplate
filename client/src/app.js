@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 //load components
 import EmailSplash from './components/EmailSplash';
 
-
 const App = () => (
   <div>
     <EmailSplash />
