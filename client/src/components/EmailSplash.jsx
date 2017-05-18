@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { Card, CardTitle, CardText} from 'material-ui/Card';
+
 import './EmailSplashStyle.scss';
+
+let cardStyle = {
+  'box-shadow': 'pink 100px 1px 6px'
+}
 
 class EmailSplash extends Component {
   constructor(props) {
@@ -22,11 +28,8 @@ class EmailSplash extends Component {
   render() {
     return (
       <div className="splashBackground">
-        <div className="emailSignUp">
-          <div className="signupHeader">
-            <h1>cashgrounds</h1>
-            <h6>compete. survive. win cash!</h6>
-          </div>
+        <Card className="emailSignUp" style={cardStyle}>
+          <CardTitle title="cashgrounds" subtitle="compete. survive. win cash!" className="signupHeader" />
           <form action="//play.us15.list-manage.com/subscribe/post?u=d806631c2c2b68285d31de691&amp;id=c29285afce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
 
             <div id="mergeTable" className="mergeTable row">
@@ -62,7 +65,7 @@ class EmailSplash extends Component {
             <input type="hidden" name="ht" value="b22f7a9abaa70e0da9ad920a44daea817c852b2f:MTQ5NTA0MDUzMC4yNTM3"></input>
             <input type="hidden" name="mc_signupsource" value="hosted"></input>
         </form>
-      </div>
+      </Card>
     </div>
     );
  }
