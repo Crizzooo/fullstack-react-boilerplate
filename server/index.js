@@ -3,15 +3,16 @@ const express = require('express');
 const volleyball = require('volleyball');
 const bodyParser = require('body-parser');
 
-const PORT = process.env.PORT || 3000;
+if (process.env.NODE_ENV === 'development') {
+  require('../secrets');
+}
 
+const db = require('../db').db;
+
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-if (process.env.NODE_ENV === 'development') {
-  require('../secrets');
-  console.log(process.env)
-}
 
 //logging middleware
 app.use(volleyball);
@@ -20,9 +21,14 @@ app.use(volleyball);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 
-app.listen(PORT, () => {
-  console.log('Server listening on Port: ', PORT);
-})
+// sync database, then start server
+db.sync()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log('Server listening on Port: ', PORT);
+    });
+  })
+  .catch(err => console.error(err));
 
 //redirect api routes
 app.use('/api', require('./api'));
