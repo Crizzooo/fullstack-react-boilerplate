@@ -13,11 +13,19 @@ export const loginUser = user => ({
 
 // thunks
 export const fetchUser = (email, password) => {
-  axios.post('/login', { email, password })
+  axios.post('/api/users/login', { email, password })
     .then(res => res.data)
     .then(user => loginUser(user))
     .catch(err => console.error(err));
 };
+
+export const signupUser = (email, password) => {
+  console.log('axios signupUser hit', email, password)
+  axios.post('/api/users/signup', { email, password })
+    .then(res => res.data)
+    .then(user => loginUser(user))
+    .catch(err => console.error(err));
+}
 
 export default (state = initialState, action) => {
   const newState = Object.assign({}, state);

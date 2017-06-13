@@ -1,11 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
+
+import User from './components/User';
+import SignUp from './components/SignUp';
 
 //load components
-import EmailSplash from './components/EmailSplash';
 
 const App = () => (
   <div>
-    <EmailSplash />
+    <User />
+    <SignUp />
   </div>
 );
 

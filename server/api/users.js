@@ -2,7 +2,7 @@
 /*eslint-disable curly*/
 const router = require('express').Router();
 
-const db = require('../db');
+const db = require('../../db');
 const User = db.model('users');
 
 // log a user in
@@ -26,6 +26,7 @@ router.post('/login', (req, res, next) => {
 
 // sign a user up
 router.post('/signup', (req, res, next) => {
+  console.log('express /signup hit', req.body);
   User.create(req.body)
     .then(user => {
       req.login(user, err => {
