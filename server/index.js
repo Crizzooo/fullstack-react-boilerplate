@@ -10,6 +10,7 @@ const app = express();
 
 if (process.env.NODE_ENV === 'development') {
   require('../secrets');
+  console.log(process.env)
 }
 
 //logging middleware
