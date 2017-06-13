@@ -31,7 +31,7 @@ module.exports = db.define('users', {
   },
   instanceMethods: {
     authenticate: (text) => {
-      return bcrypt.compare(text, this.password_digest)
+      return bcrypt.compare(text, this.password_digest);
     }
   }
 })
