@@ -19,4 +19,8 @@ export const SignUp = ({ signup }) => (
   </form>
 );
 
-export default connect(null, { signup: signupUser })(SignUp);
+const mapDispatch = (dispatch) => ({
+  signup: (email, password) => dispatch(signupUser(email, password))
+});
+
+export default connect(null, mapDispatch)(SignUp);

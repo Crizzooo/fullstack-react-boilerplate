@@ -8,7 +8,7 @@
     "build": "webpack",
     "build-watch": "npm run build -- -w",
     "start": "node server/index.js",
-    "start-watch": "nodemon server/index.js --watch server",
+    "start-watch": "nodemon server/index.js --watch server --watch db",
     "dev": "cross-env NODE_ENV=development concurrently --kill-others --prefix \"[{name}]\" --names \"BUILD,SERVE\" -c \"bgBlue.bold.black,bgYellow.bold.black\" \"npm run build-watch\" \"npm run start-watch\""
   },
   "author": "",

@@ -12,7 +12,7 @@ const setEmailAndPassword = (user) => {
     .catch(err => console.error(err));
 };
 
-module.exports = db.define('users', {
+const User = db.define('users', {
   name: Sequelize.STRING,
   email: {
     type: Sequelize.STRING,
@@ -28,10 +28,16 @@ module.exports = db.define('users', {
   hooks: {
     beforeCreate: setEmailAndPassword,
     beforeUpdate: setEmailAndPassword
-  },
-  instanceMethods: {
-    authenticate: (text) => {
-      return bcrypt.compare(text, this.password_digest);
-    }
   }
-})
+});
+
+User.prototype.authenticate = function(text) {
+  return new Promise((resolve, reject) =>
+    bcrypt.compare(text, this.password_digest, (err, result) => {
+      if (err) reject(err);
+      else resolve(result);
+    })
+  );
+};
+
+module.exports = User;

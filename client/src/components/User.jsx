@@ -1,13 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
-import { fetchUser } from '../reducers/user';
+import { loginUser } from '../reducers/user';
 
 export const Login = ({ login }) => (
   <div>
     <form onSubmit={evt => {
-      evt.preventDefault()
+      evt.preventDefault();
       login(evt.target.username.value, evt.target.password.value)
     } }>
       <input name="username" />
@@ -17,4 +16,8 @@ export const Login = ({ login }) => (
   </div>
 );
 
-export default connect(null, { login: fetchUser })(Login);
+const mapDispatch = (dispatch) => ({
+  login: (email, password) => dispatch(loginUser(email, password))
+});
+
+export default connect(null, mapDispatch)(Login);

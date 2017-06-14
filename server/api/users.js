@@ -2,8 +2,7 @@
 /*eslint-disable curly*/
 const router = require('express').Router();
 
-const db = require('../../db');
-const User = db.model('users');
+const User = require('../../db/models/user');
 
 // log a user in
 router.post('/login', (req, res, next) => {
@@ -13,8 +12,10 @@ router.post('/login', (req, res, next) => {
   })
     .then(user => {
       if (!user) res.status(401).send('User not found');
-      else if (!user.authenticate(password)) res.status(401).send('Incorrect password');
-      else {
+      else return Promise.all([user.authenticate(password), user]);
+    })
+    .spread((success, user) => {
+      if (success) {
         req.login(user, err => {
           if (err) next(err);
           else res.json(user);
@@ -42,6 +43,7 @@ router.get('/me', (req, res, next) => {
   res.json(req.user);
 });
 
+// log user out
 router.get('/logout', (req, res, next) => {
   req.logout();
   res.sendStatus(200);
