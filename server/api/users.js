@@ -1,10 +1,26 @@
 /*eslint-disable new-cap*/
 /*eslint-disable curly*/
+const passport = require('passport');
 const router = require('express').Router();
 
 const User = require('../../db/models/user');
 
-// log a user in
+// google OAuth2
+router.get('/google', passport.authenticate('google', {
+    scope: ['https://www.googleapis.com/auth/plus.login',
+  	        'https://www.googleapis.com/auth/plus.profile.emails.read'],
+    approvalPrompt: 'force'
+  }
+));
+
+// in google API dashboard, configure your app's callback to match the
+// first argument below ie http://localhost:3000/api/users/google/redirect
+router.get('/google/redirect', passport.authenticate('google', {
+  successRedirect: '/',
+  failureRedirect: '/'
+}));
+
+// log a user in to the session
 router.post('/login', (req, res, next) => {
   const { email, password } = req.body;
   User.findOne({
@@ -25,9 +41,9 @@ router.post('/login', (req, res, next) => {
     .catch(next);
 });
 
-// sign a user up
+
+// sign a user up which logs the user into the session
 router.post('/signup', (req, res, next) => {
-  console.log('express /signup hit', req.body);
   User.create(req.body)
     .then(user => {
       req.login(user, err => {
@@ -38,12 +54,12 @@ router.post('/signup', (req, res, next) => {
     .catch(next);
 });
 
-// get a logged in user
+// get the user that is logged in to the session
 router.get('/me', (req, res, next) => {
   res.json(req.user);
 });
 
-// log user out
+// log user out of the session
 router.get('/logout', (req, res, next) => {
   req.logout();
   res.sendStatus(200);

@@ -38,6 +38,15 @@ export const signupUser = (email, password) => dispatch => {
     .catch(err => console.error(err));
 };
 
+export const checkOAuth = () => dispatch => {
+  axios.get('/api/users/me')
+    .then(res => res.data)
+    .then(user => {
+      if (user) dispatch(login(user));
+    })
+    .catch(err => console.error(err));
+}
+
 export default (state = initialState, action) => {
   const newState = Object.assign({}, state);
   switch (action.type) {
