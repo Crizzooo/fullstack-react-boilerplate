@@ -1,3 +1,4 @@
+/*eslint-disable camelcase*/
 const path = require('path');
 const express = require('express');
 const volleyball = require('volleyball');
@@ -5,6 +6,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth2').Strategy;
 
 if (process.env.NODE_ENV === 'development') {
   require('../secrets');
@@ -54,16 +56,30 @@ passport.deserializeUser((id, done) => {
     .catch(done);
 });
 
-if (process.env.NODE_ENV === 'development') {
-  // for debugging purposes
-  app.use((req, res, next) => {
-    console.log(req.session);
-    next();
-  });
-}
+
+// register google strategy with passport
+passport.use(new GoogleStrategy(
+  {
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL: `http://localhost:${PORT}/api/users/google/redirect`,
+    passReqToCallback: true
+  },
+  function (request, token, refreshToken, profile, done) {
+    User.findOrCreate({
+      where: {
+        google_id: profile.id,
+        name: profile.displayName,
+        email: profile.emails[0].value
+      }
+    })
+      .spread((user) => done(null, user))
+      .catch(done);
+  }
+));
 
 // sync database, then start server
-db.sync()
+db.sync({ force: true })
   .then(() => {
     app.listen(PORT, () => {
       console.log('Server listening on Port: ', PORT);

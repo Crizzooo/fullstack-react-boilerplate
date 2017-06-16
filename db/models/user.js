@@ -21,6 +21,7 @@ const User = db.define('users', {
       notEmpty: true
     }
   },
+  google_id: Sequelize.STRING,
   password_digest: Sequelize.STRING,
   password: Sequelize.VIRTUAL // value won't be stored in the database
 }, {
