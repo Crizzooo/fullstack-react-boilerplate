@@ -6,7 +6,7 @@ const db = require('../_db');
 
 const setEmailAndPassword = (user) => {
   user.email = user.email && user.email.toLowerCase();
-  if (!user.password) return Promise.resolve(user);
+  if (!user.password) return Promise.resolve(user); // google OAuth means user may not have a password
   return bcrypt.hash(user.get('password'), 10)
     .then(hash => user.set('password_digest', hash))
     .catch(err => console.error(err));
