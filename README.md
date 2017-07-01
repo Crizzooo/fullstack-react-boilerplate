@@ -16,13 +16,14 @@ Starting point for Full Stack React-based Javascript Applications!
 
 # Instructions
 1. Clone this repo to your local machine `https://github.com/Crizzooo/react-redux-express-boilerplate.git`
-2. `npm install OR yarn install`
+2. `npm install`
 3. `rm -rf .git` - To remove commit log from boilerplate
 4. `git init` - To initiate new git log
 5. `npm run dev` - To build and launch server
 6. Visit `localhost:3000` to verify everything works!
 7. Make your own github repo and `git remote add origin ${repoURL}`
 8. Get to building the meat of your project without worrying about the boring stuff!
+9. Passport, Auth, and Postgres Databases are set up - but you'll have to uncomment the appropriate code in server/index.js, create your database, and supply a googleOAuthKey / secrets file to use them.
 
 # File Structure
 ```
