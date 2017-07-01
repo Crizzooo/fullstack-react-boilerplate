@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "build-watch": "npm run build -- -w",
+    "build-watch": "npm run build -- -w -d",
     "start": "node server/index.js",
     "start-watch": "nodemon server/index.js --watch server --watch db",
     "dev": "cross-env NODE_ENV=development concurrently --kill-others --prefix \"[{name}]\" --names \"BUILD,SERVE\" -c \"bgBlue.bold.black,bgYellow.bold.black\" \"npm run build-watch\" \"npm run start-watch\""
