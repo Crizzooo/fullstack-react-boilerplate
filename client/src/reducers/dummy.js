@@ -12,5 +12,4 @@ export default (state = initialState, action) => {
     default:
         return newState;
   }
-  return newState;
 }

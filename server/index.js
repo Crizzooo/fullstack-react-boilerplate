@@ -1,12 +1,12 @@
-/*eslint-disable camelcase*/
-const path = require('path');
-const express = require('express');
-const volleyball = require('volleyball');
-const bodyParser = require('body-parser');
-const session = require('express-session');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
-const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth2').Strategy;
+/*eslint-disable quotes */
+const path = require("path");
+const express = require("express");
+const volleyball = require("volleyball");
+const bodyParser = require("body-parser");
+const session = require("express-session");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
+const passport = require("passport");
+const GoogleStrategy = require("passport-google-oauth2").Strategy;
 
 // if (process.env.NODE_ENV === 'development') {
 //   require('../secrets');
@@ -26,9 +26,11 @@ const app = express();
 // logging middleware
 app.use(volleyball);
 
+
 // body parsing middleware
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true}));
+// app.get();
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // session middleware
 // app.use(session({
@@ -81,24 +83,25 @@ app.use(bodyParser.urlencoded({ extended: true}));
 // // sync database, then start server
 // db.sync(/*{ force: true }*/) // uncomment force true to clear database with each sync
 //   .then(() => {
-    app.listen(PORT, () => {
-      console.log('Server listening on Port: ', PORT);
-    });
+app.listen(PORT, () => {
+  console.log("Server listening on Port: ", PORT);
+  var file = "";
+});
 //   })
 //   .catch(err => console.error(err));
 
 //redirect api routes
-app.use('/api', require('./api'));
+app.use("/api", require("./api"));
 
-app.use(express.static(path.join(__dirname, '..', 'client/src/public')));
+app.use(express.static(path.join(__dirname, "..", "client/src/public")));
 
-app.get('*', (req, res, next) => {
-  res.sendFile(path.join(__dirname, '..', 'client/src/public/index.html'));
+app.get("*", (req, res, next) => {
+  res.sendFile(path.join(__dirname, "..", "client/src/public/index.html"));
 });
 
 //Error Handler
-app.use('/', (err, req, res, next) => {
+app.use("/", (err, req, res, next) => {
   console.error(err);
   console.error(err.stack);
-  res.status(err.status || 500).send(err.message || 'Internal Server error.');
+  res.status(err.status || 500).send(err.message || "Internal Server error.");
 });

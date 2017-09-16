@@ -1,0 +1,91 @@
+{
+    "workbench.colorCustomizations": {
+        "editor.renderLineHightlight": "gutter"
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            // {
+            //     "settings":{
+            //         "foreground": "#84f284",
+            //         "fontStyle": ""
+            //     }
+            // },
+            {
+                "name": "Variables",
+                "scope": ["variable.other.constant"],
+                "settings":{
+                    "foreground": "#BD93F9"
+                }
+            },
+            // {
+            //     "name": "Variables",
+            //     "scope": ["support"],
+            //     "settings":{
+            //         "foreground": "#50FA7B"
+            //     }
+            // },
+            {
+                // "name": "",
+                "scope": ["variable"],
+                "settings":{
+                    "foreground": "#31E7C0"
+                }
+            },
+            {
+                "scope": ["source"],
+                "settings":{
+                    "foreground": "#",
+                }
+            }
+        ],
+        "editor.contrastActiveBorder": "#FFF",
+        "editor.contrastBorder": "#FFF",
+        "editor.focusBorder": "#FFF",
+        "editorError.border": "",
+        "editorError.foreground": "",
+        "editorWarning.foregroun": "",
+        "editorWarning.border": "",
+    },
+    
+    /*  base:
+    - &BG '#282A36'
+    - &FG '#F8F8F2'
+    - &SELECTION '#44475A'
+  ansi:
+    - &BLACK   '#4D4D4D'
+    - &RED     '#FF5555'
+    - &GREEN   '#50FA7B'
+    - &YELLOW  '#F1FA8C'
+    - &PURPLE  '#BD93F9'
+    - &PINK    '#FF79C6'
+    - &CYAN    '#8BE9FD'
+    - &COLOR7  '#BFBFBF'
+    - &COLOR8  '#575757'
+    - &COLOR9  '#FF6E67'
+    - &COLOR10 '#5AF78E'
+    - &COLOR11 '#F4F99D'
+    - &COLOR12 '#CAA9FA'
+    - &COLOR13 '#FF92D0'
+    - &COLOR14 '#9AEDFE'
+    - &COLOR15 '#F8F8F2'
+  other:
+    - &COMMENT       '#6272A4'
+    - &ORANGE        '#FFB86C'
+    - &LineHighlight '#44475A75'
+    # UI Variants
+    - &BGLighter     '#424450'
+    - &BGLight       '#343746' # HSV (230   , 25.71, 27.45)
+    - &BGDark        '#21222C' # HSV (234.55, 25   , 17.25)
+    - &BGDarker      '#191A21' # HSV (234.55, 25   , 13   )
+    # Opaque colors
+    - &PURPLE15      '#BD93F915'
+    - &GREEN20       '#50FA7B20'
+    - &WHITE40       '#FFFFFF40'
+    - &CYAN50        '#8BE9FD50'
+    - &GREEN50       '#50FA7B50'
+    - &RED50         '#FF555550'
+    - &YELLOW80      '#F1FA8C80'
+    # Temporary (awaitiing fix)
+    - &TEMP_QUOTES   '#E9F284'*/
+
+}
