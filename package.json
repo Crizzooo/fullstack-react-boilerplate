@@ -1,5 +1,5 @@
 {
-  "name": "react-boilerplate",
+  "name": "cryptoApp",
   "version": "1.0.0",
   "description": "a boilerplate for react, redux, & express",
   "main": "index.js",
@@ -33,7 +33,7 @@
     "redux": "^3.6.0",
     "redux-logger": "^3.0.1",
     "redux-thunk": "^2.2.0",
-    "sequelize": "^4.1.0",
+    "sequelize": "^4.4.0",
     "volleyball": "^1.4.1",
     "webpack-livereload-plugin": "^0.11.0"
   },

@@ -1,40 +1,48 @@
 {
-    "workbench.colorCustomizations": {
-        "editor.renderLineHightlight": "gutter"
-    },
     "editor.tokenColorCustomizations": {
         "textMateRules": [
-            // {
-            //     "settings":{
-            //         "foreground": "#84f284",
-            //         "fontStyle": ""
-            //     }
-            // },
+            {
+                "settings":{
+                    "foreground": ""
+                }
+            },
             {
                 "name": "Variables",
-                "scope": ["variable.other.constant"],
+                "scope": ["variable.other.constant", "variable"],
                 "settings":{
                     "foreground": "#BD93F9"
                 }
             },
+            {
+                "name": "Variables",
+                "scope": ["variable.other.property", "variable.other.readwrite.alias", "meta.import", "meta.var-single-variable.expr.js", "variable.other.object"],
+                "settings":{
+                    "foreground": "#97e1f1"
+                }
+            },
             // {
             //     "name": "Variables",
-            //     "scope": ["support"],
+            //     "scope": ["meta.parameters", ],
             //     "settings":{
-            //         "foreground": "#50FA7B"
+            //         "foreground": "#FFB86C"
+            //     }
+            // },
+            // {
+            //     "scope": ["meta.object-literal.key"],
+            //     "settings":{
+            //         "foreground": "#FFB86CFA"
             //     }
             // },
             {
-                // "name": "",
-                "scope": ["variable"],
+                "scope": ["meta.tag.js",  "meta.brace.round", "punctuation.definition.parameters.end.js"],
                 "settings":{
-                    "foreground": "#31E7C0"
+                    "foreground": "#50FA7B",
                 }
             },
             {
-                "scope": ["source"],
+                "scope": [ "punctuation.definition.parameters.begin.js", "punctuation.definition.parameters.end.js", "meta.brace.square", "punctuation.accessor.js","punctuation.separator.key-value.js", "punctuation.separator.parameter", "punctuation.separator.comma", "punctuation.accessor", "punctuation.definition.parameters.begin", "punctuation.definition.parameters.end", "punctuation.definition.block", "punctuation.definition.block", "punctuation.terminator.statement"],
                 "settings":{
-                    "foreground": "#",
+                    "foreground": "#50FA7B"
                 }
             }
         ],
@@ -47,7 +55,10 @@
         "editorWarning.border": "",
     },
     
-    /*  base:
+    /*  
+    i like this color 31E7C0
+    
+    base:
     - &BG '#282A36'
     - &FG '#F8F8F2'
     - &SELECTION '#44475A'
