@@ -8,9 +8,9 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth2").Strategy;
 
-// if (process.env.NODE_ENV === 'development') {
-//   require('../secrets');
-// }
+if (process.env.NODE_ENV === 'development') {
+  require('../secrets');
+}
 
 // const db = require('../db');
 // const User = db.model('users');
